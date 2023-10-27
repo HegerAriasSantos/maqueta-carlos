@@ -1,0 +1,249 @@
+<div class="container">
+  <div class="create">
+    <div class="create__header">
+      <h2>Formulario de Registro</h2>
+    </div>
+    <div class="create__content">
+      <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="form-group">
+            <label for="id">ID</label>
+            <input
+              type="text"
+              id="id"
+              name="id"
+              class="form-control"
+              formControlName="id"
+              [ngClass]="{
+                errorField:
+                  registroForm.controls['id'].invalid &&
+                  (registroForm.controls['id'].dirty ||
+                    registroForm.controls['id'].touched)
+              }"
+              required
+              minlength="3"
+            />
+            <div
+              *ngIf="
+                registroForm.controls['id'].invalid &&
+                (registroForm.controls['id'].dirty ||
+                  registroForm.controls['id'].touched)
+              "
+            >
+              <div
+                class="errorText"
+                *ngIf="registroForm.controls['id'].hasError('required')"
+              >
+                ID es requerido.
+              </div>
+              <div
+                class="errorText"
+                *ngIf="registroForm.controls['id'].hasError('minlength')"
+              >
+                ID debe tener al menos 3 caracteres.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              class="form-control"
+              formControlName="nombre"
+              [ngClass]="{
+                errorField:
+                  registroForm.controls['nombre'].invalid &&
+                  (registroForm.controls['nombre'].dirty ||
+                    registroForm.controls['nombre'].touched)
+              }"
+              required
+              minlength="3"
+            />
+            <div
+              *ngIf="
+                registroForm.controls['nombre'].invalid &&
+                (registroForm.controls['nombre'].dirty ||
+                  registroForm.controls['nombre'].touched)
+              "
+            >
+              <div
+                class="errorText"
+                *ngIf="registroForm.controls['nombre'].hasError('required')"
+              >
+                Nombre es requerido.
+              </div>
+              <div
+                class="errorText"
+                *ngIf="registroForm.controls['nombre'].hasError('minlength')"
+              >
+                Nombre debe tener al menos 3 caracteres.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <input
+              type="text"
+              id="descripcion"
+              name="descripcion"
+              class="form-control"
+              formControlName="descripcion"
+              [ngClass]="{
+                errorField:
+                  registroForm.controls['descripcion'].invalid &&
+                  (registroForm.controls['descripcion'].dirty ||
+                    registroForm.controls['descripcion'].touched)
+              }"
+              required
+              maxlength="200"
+            />
+            <div
+              *ngIf="
+                registroForm.controls['descripcion'].invalid &&
+                (registroForm.controls['descripcion'].dirty ||
+                  registroForm.controls['descripcion'].touched)
+              "
+            >
+              <div
+                class="errorText"
+                *ngIf="
+                  registroForm.controls['descripcion'].hasError('required')
+                "
+              >
+                Descripción es requerida.
+              </div>
+              <div
+                class="errorText"
+                *ngIf="
+                  registroForm.controls['descripcion'].hasError('maxlength')
+                "
+              >
+                La descripción no debe superar los 200 caracteres.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="logo">Logo</label>
+            <input
+              type="text"
+              id="logo"
+              name="logo"
+              class="form-control"
+              formControlName="logo"
+              [ngClass]="{
+                errorField:
+                  registroForm.controls['logo'].invalid &&
+                  (registroForm.controls['logo'].dirty ||
+                    registroForm.controls['logo'].touched)
+              }"
+              required
+              class="form-control"
+            />
+            <div
+              *ngIf="
+                registroForm.controls['logo'].invalid &&
+                (registroForm.controls['logo'].dirty ||
+                  registroForm.controls['logo'].touched)
+              "
+            >
+              <div
+                class="errorText"
+                *ngIf="registroForm.controls['logo'].hasError('required')"
+              >
+                Logo es requerido.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <label for="fechaLiberacion">Fecha de Liberación</label>
+            <input
+              type="date"
+              id="fechaLiberacion"
+              name="fechaLiberacion"
+              class="form-control"
+              [ngClass]="{
+                errorField:
+                  registroForm.controls['fechaLiberacion'].invalid &&
+                  (registroForm.controls['fechaLiberacion'].dirty ||
+                    registroForm.controls['fechaLiberacion'].touched)
+              }"
+              required
+            />
+            <div
+              *ngIf="
+                registroForm.controls['fechaLiberacion'].invalid &&
+                (registroForm.controls['fechaLiberacion'].dirty ||
+                  registroForm.controls['fechaLiberacion'].touched)
+              "
+            >
+              <div
+                class="errorText"
+                *ngIf="
+                  registroForm.controls['fechaLiberacion'].hasError('required')
+                "
+              >
+                Fecha de Liberación es requerida.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="fechaRestauracion">Fecha de Restauración</label>
+            <input
+              type="date"
+              id="fechaRestauracion"
+              name="fechaRestauracion"
+              class="form-control"
+              formControlName="fechaRestauracion"
+              [ngClass]="{
+                errorField:
+                  registroForm.controls['fechaRestauracion'].invalid &&
+                  (registroForm.controls['fechaRestauracion'].dirty ||
+                    registroForm.controls['fechaRestauracion'].touched)
+              }"
+              required
+            />
+            <div
+              *ngIf="
+                registroForm.controls['fechaRestauracion'].invalid &&
+                (registroForm.controls['fechaRestauracion'].dirty ||
+                  registroForm.controls['fechaRestauracion'].touched)
+              "
+            >
+              <div
+                class="errorText"
+                *ngIf="
+                  registroForm.controls['fechaRestauracion'].hasError(
+                    'required'
+                  )
+                "
+              >
+                Fecha de Restauración es requerida.
+              </div>
+              <div
+                class="errorText"
+                *ngIf="
+                  registroForm.controls['fechaRestauracion'].hasError('min')
+                "
+              >
+                Fecha de Restauración debe ser posterior a la Fecha de
+                Liberación.
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="actions">
+          <button type="button" class="cancel">Reiniciar</button>
+          <button type="button" disabled class="confirm">Enviar</button>
+        </span>
+      </form>
+    </div>
+  </div>
+</div>
