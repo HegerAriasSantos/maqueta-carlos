@@ -4,13 +4,15 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 0 auto;
   padding-top: 20px;
+  width: 90%;
 }
 .table__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 100%;
   padding-bottom: 1rem;
 }
 .table__header--search {
@@ -36,13 +38,29 @@
 }
 
 .table__content {
-  width: 95%;
   padding: 1rem 1rem 0 1rem;
   background-color: #fff;
 }
-.table__content table {
+
+.table__content {
+  padding: 1rem 1rem 0 1rem;
+  background-color: #fff;
   width: 100%;
+  position: relative;
+}
+.table__content .scrollable {
+  max-width: 100%;
+  overflow-x: auto;
+  position: relative;
+  display: flex;
+}
+.table__content .scrollable .table2 {
+  position: absolute;
+}
+
+.table__content table {
   border-collapse: collapse;
+  max-width: 85%;
 }
 
 .table__content td,
@@ -50,20 +68,76 @@
   border-bottom: 2px solid #ecf0f3;
   text-align: center;
   padding: 16px;
+  white-space: nowrap;
+}
+
+.table2 table {
+  position: fixed;
+  /* margin-left: 1315px; */
+}
+/* fixing positions */
+@media (min-width: 400px) {
+  .table2 table {
+    margin-left: calc(78% - 8px);
+  }
+}
+
+@media (min-width: 500px) {
+  .table2 table {
+    margin-left: calc(80% - 8px);
+  }
+}
+@media (min-width: 600px) {
+  .table2 table {
+    margin-left: calc(81% - 8px);
+  }
+}
+@media (min-width: 700px) {
+  .table2 table {
+    margin-left: calc(82% - 8px);
+  }
+}
+@media (min-width: 800px) {
+  .table2 table {
+    margin-left: calc(83% - 8px);
+  }
+}
+@media (min-width: 1000px) {
+  .table2 table {
+    margin-left: calc(84% - 8px);
+  }
+}
+@media (min-width: 1200px) {
+  .table2 table {
+    margin-left: calc(86% - 16px);
+  }
+}
+@media (min-width: 1600px) {
+  .table2 table {
+    margin-left: 1370px;
+  }
+}
+
+.table2 th,
+.table2 td {
+  height: 53px;
+}
+.table2 td {
+  padding: 8px;
+  background-color: #fff;
 }
 
 .table__content th {
   background-color: #f9fafc;
 }
 
-.table__content tr:hover {
+/* .table__content tr:hover {
   background-color: #f5f5f5;
-}
+} */
 .table__footer {
   display: flex;
   justify-content: space-between;
-
-  width: 95%;
+  width: 100%;
   background-color: #fff;
   padding: 1rem 1rem 2rem 1rem;
 }

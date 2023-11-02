@@ -6,57 +6,99 @@
     </a>
   </div>
   <div class="table__content">
-    <table>
-      <thead>
-        <th>Logo</th>
-        <th>
-          Nombre del producto
-          <app-tooltip text="Nombre del producto"></app-tooltip>
-        </th>
-        <th>
-          Description
-          <app-tooltip text="Description"></app-tooltip>
-        </th>
-        <th>
-          Fecha de liberación
-          <app-tooltip text="Fecha de liberación"></app-tooltip>
-        </th>
-        <th>
-          Fecha de reestructuración
-          <app-tooltip text="Fecha de reestructuración"></app-tooltip>
-        </th>
-        <th></th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of items; let i = index">
-          <td>
-            <ng-container *ngIf="!!item.image; else imageTemplate">
-              <img src="{{ item.image }}" alt="Foto placeholder" />
-            </ng-container>
-            <ng-template #imageTemplate>
-              <div class="textLogo">
-                <span class="textLogo__content">{{
-                  item.name.slice(0, 2)
-                }}</span>
-              </div>
-            </ng-template>
-          </td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.description }}</td>
-          <td>{{ item.releaseDate | date : "MM/dd/YYYY" }}</td>
-          <td>{{ item.restorationDate | date : "MM/dd/YYYY" }}</td>
-          <td>
-            <app-modal [item]="item">
-              <img
-                class="menuDots"
-                src="../assets/icons/three-dots.svg"
-                alt="Menu"
-              />
-            </app-modal>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="scrollable">
+      <div>
+        <table>
+          <thead>
+            <th>Logo</th>
+            <th>
+              Nombre del producto
+              <app-tooltip text="Nombre del producto"></app-tooltip>
+            </th>
+            <th>
+              Description
+              <app-tooltip text="Description"></app-tooltip>
+            </th>
+            <th>
+              Fecha de liberación
+              <app-tooltip text="Fecha de liberación"></app-tooltip>
+            </th>
+            <th>
+              Fecha de reestructuración
+              <app-tooltip text="Fecha de reestructuración"></app-tooltip>
+            </th>
+            <th>
+              Director
+              <app-tooltip text="Director"></app-tooltip>
+            </th>
+            <th>
+              Genre
+              <app-tooltip text="Genre"></app-tooltip>
+            </th>
+            <th>
+              Rating
+              <app-tooltip text="Rating"></app-tooltip>
+            </th>
+            <th>
+              Duration Minutes
+              <app-tooltip text="Duration Minutes"></app-tooltip>
+            </th>
+            <th>
+              Country
+              <app-tooltip text="Country"></app-tooltip>
+            </th>
+            <th>
+              Language
+              <app-tooltip text="Language"></app-tooltip>
+            </th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items; let i = index">
+              <td>
+                <ng-container *ngIf="!!item.image; else imageTemplate">
+                  <img src="{{ item.image }}" alt="Foto placeholder" />
+                </ng-container>
+                <ng-template #imageTemplate>
+                  <div class="textLogo">
+                    <span class="textLogo__content">{{
+                      item.name.slice(0, 2)
+                    }}</span>
+                  </div>
+                </ng-template>
+              </td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.description }}</td>
+              <td>{{ item.releaseDate | date : "MM/dd/YYYY" }}</td>
+              <td>{{ item.restorationDate | date : "MM/dd/YYYY" }}</td>
+              <td>{{ item.director }}</td>
+              <td>{{ item.genre }}</td>
+              <td>{{ item.rating }}</td>
+              <td>{{ item.durationMinutes }}</td>
+              <td>{{ item.country }}</td>
+              <td>{{ item.language }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table2">
+        <table>
+          <tr>
+            <th></th>
+          </tr>
+          <tr *ngFor="let item of items; let i = index">
+            <td style="position: relative">
+              <app-modal [item]="item">
+                <img
+                  class="menuDots"
+                  src="../assets/icons/three-dots.svg"
+                  alt="Menu"
+                />
+              </app-modal>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
   <div class="table__footer">
     <span class="table__footer--results">{{ items.length }} Resultados</span>

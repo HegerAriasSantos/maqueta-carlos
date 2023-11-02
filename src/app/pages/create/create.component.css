@@ -5,7 +5,16 @@
 }
 
 .errorField {
-  border: 2px solid #ff0000;
+  border: 2px solid #ff0000 !important;
+}
+
+.disabled input {
+  background-color: #f6f6f6;
+  border-color: #ececec !important ;
+  color: #c6c6c6;
+}
+.disabled label {
+  color: #c6c6c6;
 }
 .container {
   display: flex;
@@ -16,7 +25,12 @@
 }
 .create {
   background-color: #fff;
-  width: 45%;
+  width: 700px;
+}
+@media (max-width: 750px) {
+  .create {
+    width: 100%;
+  }
 }
 .create__header {
   display: flex;
