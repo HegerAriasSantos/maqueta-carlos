@@ -30,3 +30,12 @@ body {
   margin: 2rem 0 8px 0;
   height: 50px;
 }
+.dropdown__menuOptions--item {
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown__menuOptions--item:hover {
+  background-color: #f6f6f6;
+}

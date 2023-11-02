@@ -196,8 +196,3 @@
   background-color: #bec6db;
   text-transform: uppercase;
 }
-.menuDots {
-  transform: rotate(90deg);
-  height: 30px;
-  cursor: pointer;
-}

@@ -1,0 +1,14 @@
+<label class="dropdown" (click)="show = !show">
+  <img
+    class="dropdown__trigger"
+    src="../../../assets/icons/three-dots.svg"
+    alt="Menu"
+  />
+</label>
+
+<ul class="dropdown__menuOptions" *ngIf="show">
+  <li class="dropdown__menuOptions--item">Edit</li>
+  <app-modal [item]="item">
+    <li class="dropdown__menuOptions--item">Delete</li>
+  </app-modal>
+</ul>

@@ -87,13 +87,7 @@
           </tr>
           <tr *ngFor="let item of items; let i = index">
             <td style="position: relative">
-              <app-modal [item]="item">
-                <img
-                  class="menuDots"
-                  src="../assets/icons/three-dots.svg"
-                  alt="Menu"
-                />
-              </app-modal>
+              <app-dropdown [item]="item"> </app-dropdown>
             </td>
           </tr>
         </table>
